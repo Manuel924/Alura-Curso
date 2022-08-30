@@ -1,7 +1,28 @@
 <canvas width = "600" height = "600";> </canvas>
 
 <script>
-    function dibujarCuadrado(x,y,color){    //Funcion para dibujar 
+    var pantalla = document.querySelector("canvas");
+    var pincel = pantalla.getContext("2d");
+    pincel.fillStyle = "white";
+    pincel.fillRect(0, 0, 600, 400);
+
+    function dibujarCirculo(x, y, radio, color) {
+
+        pincel.fillStyle = color;
+        pincel.beginPath();
+        pincel.arc(x, y, radio, 0, 2*3.14);
+        pincel.fill();
+    }
+
+    var v = "green";
+
+    dibujarCirculo(300, 220, 18, v);
+    dibujarCirculo(300, 180, 18, v);
+    dibujarCirculo(280, 200, 18, v);
+    dibujarCirculo(320, 200, 18, v);
+    dibujarCirculo(300, 200, 14, "brown");  //dependiendo del orden se muestra la figura.
+
+    /*function dibujarCirculo(x,y,color){    //Funcion para dibujar 
 
     var pantalla = document.querySelector("canvas");
     var pincel = pantalla.getContext("2d")
@@ -13,7 +34,7 @@
     pincel.strokeRect(x, y, 50, 50); //funcion
     }
 
-    /*  Primera forma para poder hacer un loop
+      Primera forma para poder hacer un loop
 
     var x = 0;
     while (x <= 600){
@@ -23,7 +44,7 @@
     x = x + 50;
     }
 
-    */
+    
 
     // Segunda forma para hacer un loop
     for (var x = 0; x <= 600; x = x + 50){
@@ -31,5 +52,5 @@
     dibujarCuadrado(x,50,"yellow");
     dibujarCuadrado(x,100,"green");
     }
-
+*/
 </script>
